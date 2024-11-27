@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 
 
 const Navber = () => {
@@ -34,25 +36,36 @@ const Navber = () => {
                             <li><a>Item 3</a></li>
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl">daisyUI</a>
+                    <a className="btn btn-ghost text-xl">The Artisans Touch</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
-                        <li><a>Item 1</a></li>
-                        <li>
-                            <details>
-                                <summary>Parent</summary>
-                                <ul className="p-2">
-                                    <li><a>Submenu 1</a></li>
-                                    <li><a>Submenu 2</a></li>
-                                </ul>
-                            </details>
-                        </li>
-                        <li><a>Item 3</a></li>
+                        <NavLink to={'/home'}><li className="font-bold text-2xl"><a>Home</a></li></NavLink>
+                        <NavLink to={'/addcraft'}> <li className="font-bold"><a>AddCraftItem</a></li></NavLink>
+                        <NavLink to={'/mycart'}> <li className="font-bold"><a>MyArt&CraftList</a></li></NavLink>
+                        <NavLink to={'/souverirs'}><li className="font-bold"><a>Souvenirs</a></li></NavLink>
+                        <NavLink to={'/homedecors'}><li className="font-bold"><a>Home Decors</a></li></NavLink>
                     </ul>
+
                 </div>
                 <div className="navbar-end">
-                    <a className="btn">Button</a>
+                    <div className="dropdown dropdown-end">
+                        <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                            <div className="w-10 rounded-full">
+                                <img
+                                    alt="Tailwind CSS Navbar component"
+                                    src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+                            </div>
+                        </div>
+                        <ul
+                            tabIndex={0}
+                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                            
+                            <NavLink to={'/login'}><li><a>Log In</a></li></NavLink>
+                            <NavLink to={'/register'}><li><a>Register</a></li></NavLink>
+                           
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>

@@ -10,6 +10,12 @@ import {
 import Root from './assets/Components/Root';
 import Errorpage from './assets/Components/Errorpage';
 import Home from './assets/Components/Home';
+import Souveniers from './assets/Components/Souveniers';
+import Addcraftitems from './assets/Components/Addcraftitems';
+import Mylist from './assets/Components/Mylist';
+import Homedecoros from './assets/Components/Homedecoros';
+import Login from './assets/Components/Login';
+import Register from './assets/Components/Register';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -17,9 +23,38 @@ const router = createBrowserRouter([
     errorElement: <Errorpage />,
     children: [
       {
-        path: "",
-        element:<Home></Home>
+        path: "/home",
+        element:<Home></Home>,
+        loader:async()=>{
+          const dataresponse=await fetch('card.json');
+          const datas=await dataresponse.json();
+          return{datas};
+        }
       },
+      {
+        path:"/addcraft",
+        element:<Addcraftitems></Addcraftitems>
+      },
+      {
+        path:"/mycart",
+        element:<Mylist></Mylist>
+      },
+      {
+        path:'/souverirs',
+        element:<Souveniers></Souveniers>
+      },
+      {
+        path:"/homedecors",
+        element:<Homedecoros></Homedecoros>
+      },
+      {
+        path:'/login',
+        element:<Login></Login>
+      },
+      {
+        path:'/register',
+        element:<Register></Register>
+      }
     ],
   },
 ]);

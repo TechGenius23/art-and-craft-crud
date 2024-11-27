@@ -1,6 +1,6 @@
 
 
-const Allart = () => {
+const Viewdetails = () => {
     return (
         <div>
             
@@ -8,4 +8,4 @@ const Allart = () => {
     );
 };
 
-export default Allart;
+export default Viewdetails;
