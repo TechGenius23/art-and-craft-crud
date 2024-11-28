@@ -1,7 +1,8 @@
+/* eslint-disable react/jsx-no-undef */
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
-
+import Authprovider from './assets/Components/Authprovider';
 
 import {
   createBrowserRouter,
@@ -16,6 +17,8 @@ import Mylist from './assets/Components/Mylist';
 import Homedecoros from './assets/Components/Homedecoros';
 import Login from './assets/Components/Login';
 import Register from './assets/Components/Register';
+
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -60,6 +63,8 @@ const router = createBrowserRouter([
 ]);
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+    <Authprovider>
     <RouterProvider router={router} />
+    </Authprovider>
   </StrictMode>,
 )

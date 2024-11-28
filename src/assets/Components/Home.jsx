@@ -18,7 +18,7 @@ const Home = () => {
             <Addcraftitems></Addcraftitems>
             <div className='grid grid-cols-2 gap-5'>
                 {
-                    datas?.slice(0,4).map(data=><Addcraftitems key={data.id} data={data}></Addcraftitems>)
+                    datas?.slice(1,4).map(data=><Addcraftitems key={data.id} data={data}></Addcraftitems>)
                 },
             </div>
             <Mylist></Mylist>
