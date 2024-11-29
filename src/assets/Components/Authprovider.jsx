@@ -1,24 +1,26 @@
 /* eslint-disable react-refresh/only-export-components */
 /* eslint-disable react/prop-types */
-import { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useState, } from "react";
+import app from '../Firebaseconfig'
+import { createUserWithEmailAndPassword, GithubAuthProvider, GoogleAuthProvider,signInWithEmailAndPassword, signInWithPopup, getAuth, onAuthStateChanged, TwitterAuthProvider,} from "firebase/auth";
 
-import { createUserWithEmailAndPassword, GithubAuthProvider, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup,} from "firebase/auth";
-import auth from "../Firebaseconfig";
 
 export const AuthContext = createContext()
 
 const googleprovider = new GoogleAuthProvider();
 const githubprovider=new GithubAuthProvider();
+const twitterprovider = new TwitterAuthProvider();
+
 const Authprovider = ({ children }) => {
-    // const [user, setuser] = useState(null);
-    // console.log(user);
-   
+    const [user, setuser] = useState(null);
+    console.log(user);
+   const auth=getAuth(app)
 
 
     // creatuser
-    const createUser = (email, password) => {
-        return createUserWithEmailAndPassword(auth, email, password)
-    }
+    // const createUser = (email, password) => {
+    //     return createUserWithEmailAndPassword(auth, email, password)
+    // }
 
     // emailleuser
     const signInWithEmail = (email, password) => {
@@ -40,27 +42,30 @@ const Authprovider = ({ children }) => {
       }
 
     // Twitteruser
-    
+    const twiter=()=>{
+        return signInWithPopup(auth, twitterprovider)
+      }
 
 // observer
-// useEffect(() => {
-//     onAuthStateChanged(auth, (user) => {
-//       if (user) {
-//         setuser(user)
-//       };
+useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setuser(user)
+      };
 
-//     })
-//   }, []);
+    })
+  }, []);
 
 
 
 
 
     const allvalue = {
-        createUser,
+        // createUser,
         signInWithEmail,
         signInWithGoogle,
         SignInWithGit,
+        twiter
     }
     return (
         <AuthContext.Provider value={allvalue}>{children}</AuthContext.Provider>

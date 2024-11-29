@@ -8,8 +8,7 @@ import swal from "sweetalert2";
 
 const Login = () => {
 
-    const { signInWithEmail, signInWithGoogle, SignInWithGit } =
-    useContext(AuthContext);
+    const { signInWithGoogle,SignInWithGit,twiter} = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
   const [error, setError] = useState("");
@@ -60,7 +59,7 @@ const Login = () => {
                             placeholder="Enter name"
                             name="name"
                             className="input input-bordered"
-                            required
+                            
                         />
                     </div>
                     <div className="form-control lg:col-span-2">
@@ -72,7 +71,7 @@ const Login = () => {
                             placeholder="Enter email"
                             name="email"
                             className="input input-bordered"
-                            required
+                            
                         />
                     </div>
                 </div>
@@ -96,7 +95,7 @@ const Login = () => {
                         placeholder="password"
                         name="password"
                         className="input input-bordered"
-                        required
+                        
                     />
                     <span
                         onClick={() => setshowPassword(!showPassword)}
@@ -110,16 +109,16 @@ const Login = () => {
                     <button className="btn btn-success">
                         Register
                     </button>
-                    <button className="btn btn-outline btn-secondary hover:bg-green-900 text-xl text-white">
+                    <button onClick={()=>signInWithGoogle()} className="btn btn-outline btn-secondary hover:bg-green-900 text-xl text-white">
                         Continue with Google
                     </button>
                     <button className="btn btn-outline btn-secondary hover:bg-green-900 text-xl text-white">
                     Continue with Facebook
                     </button>
-                    <button className="btn btn-outline btn-secondary hover:bg-green-900 text-xl text-white">
+                    <button onClick={()=>SignInWithGit()} className="btn btn-outline btn-secondary hover:bg-green-900 text-xl text-white">
                     Continue with GitHub
                     </button>
-                    <button className="btn btn-outline btn-secondary hover:bg-green-900 text-xl text-white">
+                    <button onClick={()=>twiter()} className="btn btn-outline btn-secondary hover:bg-green-900 text-xl text-white">
                     Continue with   Twitter
                     </button>
                     <button className="btn btn-outline btn-secondary hover:bg-green-900 text-xl text-white">

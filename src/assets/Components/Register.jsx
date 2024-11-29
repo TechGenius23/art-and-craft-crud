@@ -8,7 +8,7 @@ import swal from 'sweetalert2'
 
 const Register = () => {
 
-    const { createUser,signInWithEmail,signInWithGoogle,SignInWithGit } = useContext(AuthContext);
+    const { signInWithGoogle,SignInWithGit,twiter} = useContext(AuthContext);
     const navigate = useNavigate();
     const [error, setError] = useState("");
     const [showPassword, ] = useState(false);
@@ -34,45 +34,10 @@ const Register = () => {
                 return;
             }
         
-            createUser(email, password)
-                .then((userCredential) => {
-                    // Signed up
-                    const user = userCredential.user;
-                    // ...
-                    if (user) {
-                        swal.fire({
-                            position: "top-center",
-                            icon: "success",
-                            title: "Account is Created",
-                            showConfirmButton: false,
-                            timer: 1500,
-                        });
-                        handleUpdateUser(name, photoURl);
-                        navigate("/");
-                        form.reset();
-                    }
-                })
-                .catch((error) => {
-                    const errorCode = error.code;
-                    const errorMessage = error.message;
-                    setError(errorMessage);
-                    // ..
-                });
-            const handleUpdateUser = (name, photo) => {
-                const profile = {
-                    displayName: name,
-                    photoURL: photo,
-                };
-                updateUser(profile)
-                    .then(() => {
-                        // Profile updated!
-                        // ...
-                    })
-                    .catch((error) => {
-                        // An error occurred
-                        // ...
-                    });
-            };
+           
+                
+            
+           
         };
     return (
         <div className="card lg:shadow-2xl bg-base-100 my-5 lg:w-6/12 mx-auto px-10 py-8">
@@ -132,7 +97,7 @@ const Register = () => {
                     
                 </div>
                 <div className="form-control">
-                    <button onClick={()=>createUser()} className="btn btn-success">
+                    <button  className="btn btn-success">
                         Register
                     </button>
                     <button className="btn btn-outline btn-secondary hover:bg-green-900 text-xl text-white">
@@ -148,7 +113,7 @@ const Register = () => {
                     <button onClick={()=>SignInWithGit()} className="btn btn-outline btn-secondary hover:bg-green-900 text-xl text-white">
                     Continue with GitHub
                     </button>
-                    <button className="btn btn-outline btn-secondary hover:bg-green-900 text-xl text-white">
+                    <button onClick={()=>twiter()} className="btn btn-outline btn-secondary hover:bg-green-900 text-xl text-white">
                     Continue with   Twitter
                     </button>
                     <button className="btn btn-outline btn-secondary hover:bg-green-900 text-xl text-white">
