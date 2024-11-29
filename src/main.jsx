@@ -17,6 +17,7 @@ import Mylist from './assets/Components/Mylist';
 import Homedecoros from './assets/Components/Homedecoros';
 import Login from './assets/Components/Login';
 import Register from './assets/Components/Register';
+import Viewdetails from './assets/Components/Viewdetails';
 
 
 const router = createBrowserRouter([
@@ -36,7 +37,13 @@ const router = createBrowserRouter([
       },
       {
         path:"/addcraft",
-        element:<Addcraftitems></Addcraftitems>
+        element:<Addcraftitems></Addcraftitems>,
+        
+      },
+      {
+        path:'/viewdetails/:id',
+        element:<Viewdetails></Viewdetails>,
+        loader:()=> fetch('card.json'),
       },
       {
         path:"/mycart",

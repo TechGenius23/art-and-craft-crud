@@ -1,57 +1,92 @@
 [
-    {
-      "id": 1,
-      "name": "Hand-Painted Floral Scarf",
-      "price": 1299,
-      "image": "https://i.ibb.co.com/4Jh6wq9/e30c2c179c514a665622310226aed007.jpg"
-    },
-    {
-      "id": 2,
-      "name": "Bohemian Tie-Dye T-Shirt",
-      "price": 999,
-      "image": "https://i.ibb.co.com/GVzPtnz/F-B-Pink.jpg"
-    },
-    {
-      "id": 3,
-      "name": "Embroidered Denim Jacket",
-      "price": 2499,
-      "image": "https://i.ibb.co.com/xqYkGKD/hmgoepprod.jpg"
-    },
-    {
-      "id": 4,
-      "name": "Custom Patchwork Hoodie",
-      "price": 1999,
-      "image": "https://i.ibb.co.com/Y31TtnK/judys-fiber-art-shirtwaste-fabric-sculpture-with-best-and-newest-fabric-collage-wall-art.jpg"
-    },
-    {
-      "id": 5,
-      "name": "Eco-Printed Maxi Dress",
-      "price": 3499,
-      "image": "https://i.ibb.co.com/x60yrGm/OIP-1.jpg"
-    },
-    {
-      "id": 6,
-      "name": "Batik Print Wrap Skirt",
-      "price": 1399,
-      "image": "https://i.ibb.co.com/6BMrfPz/OIP-2.jpg"
-    },
-    {
-      "id": 7,
-      "name": "Handwoven Cotton Tunic",
-      "price": 1899,
-      "image": "https://i.ibb.co.com/tZSDf2g/OIP-3.jpg"
-    },
-    {
-      "id": 8,
-      "name": "Paint Splatter Sweatpants",
-      "price": 1599,
-      "image": "https://i.ibb.co.com/ts107Y3/OIP.jpg"
-    },
-    {
-      "id": 9,
-      "name": "Macramé Detail Tank Top",
-      "price": 1199,
-      "image": "https://i.ibb.co.com/CQb4Fms/R.jpg"
-    }
-  ]
-  
+  {
+    "id": 1,
+    "name": "Hand-Painted Floral Scarf",
+    "price": 1299,
+    "image": "https://i.ibb.co.com/4Jh6wq9/e30c2c179c514a665622310226aed007.jpg",
+    "whoMade": "Artisan Collective",
+    "whereMade": "India",
+    "fabric": "Silk",
+    "details": "A delicate, hand-painted floral scarf crafted with 100% natural silk. Perfect for casual or formal occasions."
+  },
+  {
+    "id": 2,
+    "name": "Bohemian Tie-Dye T-Shirt",
+    "price": 999,
+    "image": "https://i.ibb.co.com/GVzPtnz/F-B-Pink.jpg",
+    "whoMade": "Local Artists",
+    "whereMade": "Thailand",
+    "fabric": "Cotton",
+    "details": "This t-shirt features a vibrant, bohemian tie-dye pattern, made with breathable cotton for all-day comfort."
+  },
+  {
+    "id": 3,
+    "name": "Embroidered Denim Jacket",
+    "price": 2499,
+    "image": "https://i.ibb.co.com/xqYkGKD/hmgoepprod.jpg",
+    "whoMade": "Ethical Fashion Co.",
+    "whereMade": "Bangladesh",
+    "fabric": "Denim",
+    "details": "A classic denim jacket with intricate, hand-embroidered designs that add a unique and stylish touch."
+  },
+  {
+    "id": 4,
+    "name": "Custom Patchwork Hoodie",
+    "price": 1999,
+    "image": "https://i.ibb.co.com/Y31TtnK/judys-fiber-art-shirtwaste-fabric-sculpture-with-best-and-newest-fabric-collage-wall-art.jpg",
+    "whoMade": "Sustainable Studio",
+    "whereMade": "USA",
+    "fabric": "Recycled Cotton",
+    "details": "A one-of-a-kind patchwork hoodie made from recycled materials, offering comfort and eco-friendliness."
+  },
+  {
+    "id": 5,
+    "name": "Eco-Printed Maxi Dress",
+    "price": 3499,
+    "image": "https://i.ibb.co.com/x60yrGm/OIP-1.jpg",
+    "whoMade": "Earthwear Collective",
+    "whereMade": "Australia",
+    "fabric": "Organic Cotton",
+    "details": "An elegant maxi dress with natural eco-print patterns, made from soft and sustainable organic cotton."
+  },
+  {
+    "id": 6,
+    "name": "Batik Print Wrap Skirt",
+    "price": 1399,
+    "image": "https://i.ibb.co.com/6BMrfPz/OIP-2.jpg",
+    "whoMade": "Handcrafted Studios",
+    "whereMade": "Indonesia",
+    "fabric": "Rayon",
+    "details": "A traditional batik-printed wrap skirt, combining vibrant patterns and lightweight, flowing fabric."
+  },
+  {
+    "id": 7,
+    "name": "Handwoven Cotton Tunic",
+    "price": 1899,
+    "image": "https://i.ibb.co.com/tZSDf2g/OIP-3.jpg",
+    "whoMade": "Weavers Guild",
+    "whereMade": "Nepal",
+    "fabric": "Handwoven Cotton",
+    "details": "This tunic is made with handwoven cotton and designed for both comfort and style in any season."
+  },
+  {
+    "id": 8,
+    "name": "Paint Splatter Sweatpants",
+    "price": 1599,
+    "image": "https://i.ibb.co.com/ts107Y3/OIP.jpg",
+    "whoMade": "Urban Artists",
+    "whereMade": "USA",
+    "fabric": "Fleece",
+    "details": "Sweatpants with a trendy paint-splatter design, crafted from warm and cozy fleece material."
+  },
+  {
+    "id": 9,
+    "name": "Macramé Detail Tank Top",
+    "price": 1199,
+    "image": "https://i.ibb.co.com/CQb4Fms/R.jpg",
+    "whoMade": "Boho Designs",
+    "whereMade": "Morocco",
+    "fabric": "Linen",
+    "details": "A lightweight tank top featuring beautiful macramé details, ideal for summer or layering."
+  }
+]

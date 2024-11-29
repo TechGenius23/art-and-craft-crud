@@ -6,19 +6,20 @@ import Mylist from "./Mylist";
 
 import Slider from "./Slider";
 import Souveniers from "./Souveniers";
+import Text from "./Text";
 
 
 const Home = () => {
-    const {datas}=useLoaderData(null)
-   
+    const { datas } = useLoaderData(null)
+
     return (
         <>
             <Slider></Slider>
-            
+            <Text></Text>
             <Addcraftitems></Addcraftitems>
-            <div className='grid grid-cols-2 gap-5'>
+            <div className='grid grid-cols-3 gap-5'>
                 {
-                    datas?.slice(1,4).map(data=><Addcraftitems key={data.id} data={data}></Addcraftitems>)
+                    datas?.map(data => <Addcraftitems key={data.id} data={data}></Addcraftitems>)
                 },
             </div>
             <Mylist></Mylist>
