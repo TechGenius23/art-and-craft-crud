@@ -18,6 +18,8 @@ import Homedecoros from './assets/Components/Homedecoros';
 import Login from './assets/Components/Login';
 import Register from './assets/Components/Register';
 import Viewdetails from './assets/Components/Viewdetails';
+import Makelist from './assets/Components/Makelist';
+import Beforemylist from './assets/Components/Beforemylist';
 
 
 const router = createBrowserRouter([
@@ -47,7 +49,13 @@ const router = createBrowserRouter([
       },
       {
         path:"/mycart",
-        element:<Mylist></Mylist>
+        element:<Mylist></Mylist>,
+        
+      },
+      {
+        path:'/beforemylist',
+        element:<Beforemylist></Beforemylist>,
+        loader:()=>fetch('http://localhost:5000/user')
       },
       {
         path:'/souverirs',
@@ -64,6 +72,10 @@ const router = createBrowserRouter([
       {
         path:'/register',
         element:<Register></Register>
+      },
+      {
+        path:'/makelist',
+        element:<Makelist></Makelist>
       }
     ],
   },
