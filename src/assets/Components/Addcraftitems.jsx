@@ -1,8 +1,8 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 const Addcraftitems = ({data={}}) => {
-
+console.log(data);
     const{name,price,image,id}=data;
     return (
        

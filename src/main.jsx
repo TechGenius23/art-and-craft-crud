@@ -30,52 +30,53 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/home",
-        element:<Home></Home>,
-        loader:async()=>{
-          const dataresponse=await fetch('card.json');
-          const datas=await dataresponse.json();
-          return{datas};
+        element: <Home></Home>,
+        loader: async () => {
+          const dataresponse = await fetch('card.json');
+          const datas = await dataresponse.json();
+         
+          return { datas };
         }
       },
       {
-        path:"/addcraft",
-        element:<Addcraftitems></Addcraftitems>,
-        
+        path: "/addcraft",
+        element: <Addcraftitems></Addcraftitems>,
+
       },
       {
-        path:'/viewdetails/:id',
-        element:<Viewdetails></Viewdetails>,
-        loader:()=> fetch('card.json'),
+        path: '/viewdetails/:id',
+        element: <Viewdetails></Viewdetails>,
+        loader: () => fetch('card.json'),
       },
       {
-        path:"/mycart",
-        element:<Mylist></Mylist>,
-        
+        path: "/mycart",
+        element: <Mylist></Mylist>,
+
       },
       {
-        path:'/beforemylist',
-        element:<Beforemylist></Beforemylist>,
-        loader:()=>fetch('http://localhost:5000/user')
+        path: '/beforemylist',
+        element: <Beforemylist></Beforemylist>,
+        loader: () => fetch('http://localhost:5000/user')
       },
       {
-        path:'/souverirs',
-        element:<Souveniers></Souveniers>
+        path: '/souverirs',
+        element: <Souveniers></Souveniers>
       },
       {
-        path:"/homedecors",
-        element:<Homedecoros></Homedecoros>
+        path: "/homedecors",
+        element: <Homedecoros></Homedecoros>
       },
       {
-        path:'/login',
-        element:<Login></Login>
+        path: '/login',
+        element: <Login></Login>
       },
       {
-        path:'/register',
-        element:<Register></Register>
+        path: '/register',
+        element: <Register></Register>
       },
       {
-        path:'/makelist',
-        element:<Makelist></Makelist>
+        path: '/makelist',
+        element: <Makelist></Makelist>
       }
     ],
   },
@@ -83,7 +84,7 @@ const router = createBrowserRouter([
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Authprovider>
-    <RouterProvider router={router} />
+      <RouterProvider router={router} />
     </Authprovider>
   </StrictMode>,
 )

@@ -1,7 +1,8 @@
 
 
 
-const Mylist = ({singleuser={}}) => {
+const Mylist = (singleuser) => {
+    console.log(singleuser);
     const {name,email,stock,time,example,rating,price,subcategory,itemname,image}=singleuser;
     return (
         <div>
@@ -13,12 +14,14 @@ const Mylist = ({singleuser={}}) => {
                 </figure>
                 <div className="card-body">
                     <h2 className="card-title">{name}</h2>
-                    <p></p>
+                    <p></p> 
                     <div className="card-actions justify-end">
                         <button className="btn btn-primary">{email}</button>
                     </div>
                 </div>
             </div>
+
+           
         </div>
     );
 };

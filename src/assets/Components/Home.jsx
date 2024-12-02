@@ -11,6 +11,7 @@ import Text from "./Text";
 
 
 
+
 const Home = () => {
     const { datas } = useLoaderData(null)
 
@@ -18,7 +19,7 @@ const Home = () => {
         <>
             <Slider></Slider>
             <Text></Text>
-            <Addcraftitems></Addcraftitems>
+          
             <div className='grid grid-cols-3 gap-5'>
                 {
                     datas?.map(data => <Addcraftitems key={data.id} data={data}></Addcraftitems>)
