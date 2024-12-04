@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Outlet, useLoaderData } from "react-router-dom";
 import Addcraftitems from "./Addcraftitems";
 
 import Homedecoros from "./Homedecoros";

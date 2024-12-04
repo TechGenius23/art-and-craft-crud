@@ -22,18 +22,7 @@ const Register = () => {
         const photoURl = form.photoURL.value;
         const formm = { name, email, password, photoURl }
         console.log(formm);
-        // if (password.length < 6) {
-        //     setError("Password must be six characters long or more");
-        //     return;
-        // }
-        // if (!/(?=.*?[#?!@$%^&*-])/.test(password)) {
-        //     setError("Password should contain at least one Special character");
-        //     return;
-        // }
-        // if (!/(?=.*?[A-Z])/.test(password)) {
-        //     setError("Password should contain at least one Capital character");
-        //     return;
-        // }
+       
 
         createUser(email,password)
 
@@ -107,9 +96,7 @@ const Register = () => {
             {/* others login */}
             <div className="form-control w-96">
 
-                <button className="btn btn-outline btn-secondary hover:bg-green-900 text-xl text-white">
-                    Continue with Email
-                </button>
+                
                 <button onClick={() => signInWithGoogle()} className="btn btn-outline btn-secondary hover:bg-green-900 text-xl text-white">
                     Continue with Google
                 </button>

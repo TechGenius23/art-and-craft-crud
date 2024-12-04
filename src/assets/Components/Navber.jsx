@@ -65,6 +65,7 @@ const Navber = () => {
                             
                             <NavLink to={'/login'}><li><a>Log In</a></li></NavLink>
                             <NavLink to={'/register'}><li><a>Register</a></li></NavLink>
+                            <button className="btn btn-error">Log Out</button>
                            
                         </ul>
                     </div>

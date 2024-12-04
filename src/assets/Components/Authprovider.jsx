@@ -19,14 +19,11 @@ const Authprovider = ({ children }) => {
 
   // creatuser
   const createUser = (email,password) => {
-    // console.log("Create User, ", user)
-
     return createUserWithEmailAndPassword(auth,email,password)
   }
 
   // emailleuser
   const signInWithEmail = (email, password) => {
-
       return signInWithEmailAndPassword(auth, email, password);
     };
 
@@ -63,6 +60,7 @@ const Authprovider = ({ children }) => {
 
 
   const allvalue = {
+   
     createUser,
     signInWithEmail,
     signInWithGoogle,
