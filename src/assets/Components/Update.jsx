@@ -1,47 +1,10 @@
-import { Link, NavLink } from 'react-router-dom';
-import swal from 'sweetalert2'
 
-
-const Makelist = () => {
-    const Adduser = (e) => {
-        e.preventDefault();
-        const form = e.target;
-        const name = form.name.value;
-        const email=form.email.value;
-        const stock=form.stock.value;
-        const time=form.time.value;
-        const example=form.example.value;
-        const rating=form.rating.value;
-        const price=form.price.value;
-        const subcategory=form.subcategory.value;
-        const itemname=form.itemname.value;
-        const image=form.image.value;
-        const USER = {name,email,stock,time,example,rating,price,subcategory,itemname,image}
-        console.log(USER);
-
-        
-        // send data to the server
-        fetch('http://localhost:5000/user',{
-            method:'POST',
-            headers:{
-                'content-type':'application/json',
-            },
-            body:JSON.stringify(USER)
-        })
-        .then(res=>res.json)
-        .then(data=>
-            {console.log(data);
-            if(data.insertId){
-                swal('Oops...', 'Something went wrong!', 'error')
-            }
-        })
-    }
+const Update = () => {
     return (
-
-
-
         <div>
-            <form onSubmit={Adduser} >
+            
+        <div>
+            <form >
                 <div className="flex gap-4">
                     <input
                         type="text"
@@ -96,8 +59,8 @@ const Makelist = () => {
                 {/* <button className="btn btn-success"><Link to={'/mycart'}><li className="font-bold"><a>Add now</a></li></Link></button> */}
             </form>
         </div>
-
+        </div>
     );
 };
 
-export default Makelist;
+export default Update;

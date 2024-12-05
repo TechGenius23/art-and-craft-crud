@@ -20,6 +20,9 @@ import Register from './assets/Components/Register';
 import Viewdetails from './assets/Components/Viewdetails';
 import Makelist from './assets/Components/Makelist';
 import Beforemylist from './assets/Components/Beforemylist';
+import Privateroute from './assets/Components/Privateroute';
+import Sheam from './assets/Components/Sheam';
+import Update from './assets/Components/Update';
 
 
 const router = createBrowserRouter([
@@ -39,8 +42,8 @@ const router = createBrowserRouter([
         }
       },
       {
-        path: "/addcraft",
-        element: <Addcraftitems></Addcraftitems>,
+        path: "/sheam",
+        element: <Sheam></Sheam>,
 
       },
       {
@@ -49,8 +52,10 @@ const router = createBrowserRouter([
         loader: () => fetch('card.json'),
       },
       {
-        path: "/mycart",
-        element: <Mylist></Mylist>,
+        path: "/mycart",      
+        element:<Privateroute>
+          <Mylist></Mylist>
+        </Privateroute> ,
 
       },
       {
@@ -77,6 +82,10 @@ const router = createBrowserRouter([
       {
         path: '/makelist',
         element: <Makelist></Makelist>
+      },
+      {
+        path:'/update',
+        element:<Update></Update>
       }
     ],
   },

@@ -1,8 +1,8 @@
 /* eslint-disable react-refresh/only-export-components */
 /* eslint-disable react/prop-types */
-import { createContext,  } from "react";
+import { createContext, useEffect, useState,  } from "react";
 import app from '../Firebaseconfig'
-import { createUserWithEmailAndPassword, GithubAuthProvider, GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup, getAuth, TwitterAuthProvider, } from "firebase/auth";
+import { createUserWithEmailAndPassword, GithubAuthProvider, GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup, getAuth, TwitterAuthProvider, onAuthStateChanged, signOut, } from "firebase/auth";
 
 
 export const AuthContext = createContext()
@@ -12,10 +12,14 @@ const githubprovider = new GithubAuthProvider();
 const twitterprovider = new TwitterAuthProvider();
 
 const Authprovider = ({ children }) => {
-  // const [user, setuser] = useState(null);
+  const [user, setuser] = useState(null);
   // console.log(user);
   const auth = getAuth(app)
-
+// signout
+const logout =()=>{
+  signOut(auth)
+  
+}
 
   // creatuser
   const createUser = (email,password) => {
@@ -46,21 +50,22 @@ const Authprovider = ({ children }) => {
   }
 
   // observer
-  // useEffect(() => {
-  //     onAuthStateChanged(auth, (user) => {
-  //       if (user) {
-  //         setuser(user)
-  //       };
+  useEffect(() => {
+      onAuthStateChanged(auth, (user) => {
+        if (user) {
+          setuser(user)
+        };
 
-  //     })
-  //   }, []);
+      })
+    }, []);
 
 
 
 
 
   const allvalue = {
-   
+    logout,
+   user,
     createUser,
     signInWithEmail,
     signInWithGoogle,

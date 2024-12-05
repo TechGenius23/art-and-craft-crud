@@ -1,8 +1,13 @@
+import { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import { AuthContext } from "./Authprovider";
 
 
 
 const Navber = () => {
+    const {logout}=useContext(AuthContext)
+
+
     return (
         <div>
             <div className="navbar bg-base-100">
@@ -41,11 +46,12 @@ const Navber = () => {
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
                         <NavLink to={'/home'}><li className="font-bold text-2xl"><a>Home</a></li></NavLink>
-                        <NavLink to={'/addcraft'}> <li className="font-bold"><a>CraftItem</a></li></NavLink>
+                        <NavLink to={'/sheam'}> <li className="font-bold"><a>CraftItem</a></li></NavLink>
                         <NavLink to={'/makelist'}><li className="font-bold"><a>Make list</a></li></NavLink>
                         <NavLink to={'/mycart'}> <li className="font-bold"><a>My List</a></li></NavLink>
                         <NavLink to={'/souverirs'}><li className="font-bold"><a>Souvenirs</a></li></NavLink>
                         <NavLink to={'/homedecors'}><li className="font-bold"><a>Home Decors</a></li></NavLink>
+                        {/* <NavLink to={'/update'}><li className="font-bold"><a>Home Decors</a></li></NavLink> */}
                         
                     </ul>
 
@@ -65,7 +71,7 @@ const Navber = () => {
                             
                             <NavLink to={'/login'}><li><a>Log In</a></li></NavLink>
                             <NavLink to={'/register'}><li><a>Register</a></li></NavLink>
-                            <button className="btn btn-error">Log Out</button>
+                            <button onClick={()=>logout()} className="btn btn-error">Log Out</button>
                            
                         </ul>
                     </div>

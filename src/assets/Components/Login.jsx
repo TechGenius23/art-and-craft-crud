@@ -36,6 +36,8 @@ const Login = () => {
             alert("Login failed: " + error.message);
         });
 
+        
+
     };
 
     return (
@@ -69,7 +71,7 @@ const Login = () => {
                     />
                 </div>
                 <button className="btn btn-success">
-                    Register
+                  Log In
                 </button>
             </form>
 
@@ -103,7 +105,7 @@ const Login = () => {
             <div className="flex justify-center">
                 <Link to={"/register"}>
                     Dont have an Account?
-                    <span className="font-bold text-basicColor ms-2">Log In</span>
+                    <span className="font-bold text-basicColor ms-2">Register</span>
                 </Link>
             </div>
         </div>
