@@ -81,7 +81,9 @@ const router = createBrowserRouter([
       },
       {
         path: '/makelist',
-        element: <Makelist></Makelist>
+        element:<Privateroute>
+          <Makelist></Makelist>
+          </Privateroute> 
       },
       {
         path:'/update',
