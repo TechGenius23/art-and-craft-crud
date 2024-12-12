@@ -10,7 +10,7 @@ const Register = () => {
 
     const { createUser, signInWithGoogle, SignInWithGit, twiter } = useContext(AuthContext);
     // const navigate = useNavigate();
-    // const [error, setError] = useState("");
+    // const [error, setError] = useState(""); 
     const [showPassword,] = useState(false);
 
     const handleCreateUser = (e) => {
